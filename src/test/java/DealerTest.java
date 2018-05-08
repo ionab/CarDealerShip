@@ -31,12 +31,18 @@ public class DealerTest {
 
     @Test
     public void canGetDealerMoney(){
-        assertEquals(500000.00, dealer.getMoney(), 0.01);
+        assertEquals(50000.00, dealer.getMoney(), 0.01);
     }
 
     @Test
     public void sellingCarIncreaseDealerMoney(){
         dealer.sellCar(car,customer);
         assertEquals(60000, dealer.getMoney(), 0.01);
+    }
+
+    @Test
+    public void sellingCarDecreasesCustomerMoney(){
+        dealer.sellCar(car, customer);
+        assertEquals(40000, customer.getMoney(), 0.01);
     }
 }
