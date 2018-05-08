@@ -1,12 +1,14 @@
 package vehicles;
 import components.Engine;
-
+import components.FuelTank;
 
 
 public class Car extends Vehicle implements Driveable{
 
+    Car car;
     Engine engine;
     int distance;
+    FuelTank fuelTank;
 
     public Car(int capacity, double price, String colour, Engine engine) {
         super(capacity, price, colour);
@@ -30,11 +32,10 @@ public class Car extends Vehicle implements Driveable{
         return (baseline_value/ getEngineSize());
     }
 
-    public boolean drive(double distance){
-
-        return true;
-//        (calculateVehicleEfficency()*distance);
-
+    public void drive(double distance){
+        double fuelRemaining;
+        fuelRemaining = ((getFuelTankCapacityFromEngine() -= (distance/calculateVehicleEfficency())));
+        fuelTank.setTankCapacity(fuelRemaining);
     }
 
 

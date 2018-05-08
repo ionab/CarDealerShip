@@ -1,5 +1,5 @@
 package vehicles;
 
 public interface Refuelable {
-    double refuel(int distance);
+    double refuel(double distance);
 }

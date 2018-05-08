@@ -11,4 +11,8 @@ public class FuelTank {
     public double getTankCapacity() {
         return tankCapacity;
     }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
+    }
 }
