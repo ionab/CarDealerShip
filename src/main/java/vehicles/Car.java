@@ -3,9 +3,10 @@ import components.Engine;
 
 
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Driveable{
 
     Engine engine;
+    int distance;
 
     public Car(int capacity, double price, String colour, Engine engine) {
         super(capacity, price, colour);
@@ -23,4 +24,18 @@ public class Car extends Vehicle {
     public double getFuelTankCapacityFromEngine(){
         return engine.getFuelTankCapacity();
     }
+
+    public double calculateVehicleEfficency(){
+        double baseline_value = 56;
+        return (baseline_value/ getEngineSize());
+    }
+
+    public boolean drive(double distance){
+
+        return true;
+//        (calculateVehicleEfficency()*distance);
+
+    }
+
+
 }

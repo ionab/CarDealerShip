@@ -43,4 +43,9 @@ public class CarTest {
     public void canGetFuelTankCapacity() {
         assertEquals(50, car.getFuelTankCapacityFromEngine(), 0.01);
     }
+
+    @Test
+    public void canCalculateFuelEfficency(){
+        assertEquals(31.111111111, car.calculateVehicleEfficency(), 0.01);
+    }
 }
